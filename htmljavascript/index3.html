@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+    <form>
+        <label for="usuario">Usuario:</label>
+        <input type="text" placeholder="Entra tu nombre" id="nombre" required><br>
+        <br>
+        <label for="Clave">Clave:</label>
+        <input type="password" placeholder="Entra tu clave" id="clave" required>
+        <br>
+        <br>
+        <input type="button" id="boton" value="Entrar"  onclick="login()">
+       <!-- <button.addEventListener("click", function(e){})></button>  -->
+        <h1 id="texto"></h1>
+    </form>
+    <script>
+        function login() {
+            let nombre = document.getElementById('nombre').value
+            // let nombre2 = nombre.value
+            //usuario
+            const error1 = 'Tu tienes que entrar tu nombre'
+            const error2 = ' Tienes que entrar tu contraseña'
+            const error3 = error1 + ' y tu contraseña'
+            const colormensaje = `${document.getElementById('texto').style.color = 'blue'}`
+            
+
+            if (nombre.trim().length == 0) {
+                document.getElementById('texto').innerHTML = error1
+                colormensaje //la definimos como una variable arriba
+            } else {
+                document.getElementById('texto').innerHTML = 'Bienvenido ' + nombre //indica la variable de nombre dos que declare en el 26
+                document.getElementById('texto').style.color = 'black'
+
+            }
+            //password
+            let contrasena = document.getElementById('clave').value
+
+
+            if (contrasena.trim().length == 0) {
+                document.getElementById('texto').innerHTML = error2
+               // document.getElementById('texto').style.color = 'red'
+               colormensaje
+            }
+            if (contrasena.trim().length == 0 && nombre.trim().length == 0) {
+                document.getElementById('texto').innerHTML = error3
+            }
+        const boton= document.getElementById('boton')
+        
+        boton.addEventListener('click', function (e) {
+            login()
+        })
+        
+    }
+</script>
+</body>
+
+</html>

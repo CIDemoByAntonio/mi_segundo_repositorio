@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso de udemy</title>
+    <style>
+        label{
+            font-weight: bolder;
+            display: block;
+            padding-top: 30px;
+        }
+    label, input{margin: 5px 0;}
+
+    form{
+        width: 600px;
+        margin: 0 auto;
+    }
+   </style>
+   
+</head>
+<body>
+<form action="#">
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" name="nombre" >
+
+<label for="lenguajes">Lenguajes</label>
+<input type="checkbox" name="lenguaje1" value="javascript">Javascript
+<input type="checkbox" name="lenguaje2" value="php">php
+<input type="checkbox" name="lenguaje3" value="python">Python
+
+<label for="seniority">Seniority</label>
+<input type="radio" name="level" value="junior">junior
+<input type="radio" name="level" value="senior">Senior
+<input type="radio" name="level" value="principal">Principal 
+
+<label for="pais">Pais</label> 
+<select name="pais" id="pais">
+<option value=""></option>
+<option value="mexico">Mexico</option>
+<option value="us">Estados unidos</option>
+<option value="canada">Canada</option> 
+</select>
+<br>
+<input type="text" id="itPais"> <br>
+<button id="bPais">Añadir pais</button> 
+
+<p>
+    <input type="submit" id="boton" value="Enviar datos"> 
+</p>
+
+<p id="respuesta"></p>
+</form>
+
+</body>
+<script src="./formulario.js"></script>
+</html>
+

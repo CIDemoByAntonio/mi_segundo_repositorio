@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="paises"></ul>
+    <script>
+        //ul es una lista desordenada
+        //ol lista ordenada
+        //padre
+        const nuevalista = document.createElement('ol')
+        document.body.appendChild(nuevalista)
+        //hijo
+        let nuevoelemento = document.createElement('li')
+        nuevoelemento.textContent = 'Manzana'
+        nuevalista.appendChild(nuevoelemento)
+
+        let nuevoelemento2 = document.createElement('li')
+        nuevoelemento2.textContent = 'Pera'
+        nuevalista.appendChild(nuevoelemento2)
+
+        let equipos = ['Ajax', 'Roma', 'Lazio', 'Liverpool', 'Nacional']
+        const padreEquipos = document.createElement('ol')
+        document.body.appendChild(padreEquipos)
+
+        //hijos
+        equipos.forEach(elemento => {
+            const hijoEquipo = document.createElement('li')
+            hijoEquipo.textContent=elemento //le indicamos elemento del forEach
+            padreEquipos.appendChild(hijoEquipo)
+        });
+
+        let nombres=['Francia','Holanda','España','Inglaterra','Suiza']
+        let lista =document.getElementById('paises')
+
+        for (let i = 0; i < nombres.length; i++) { //length la cantidad de nombres
+            let nuevoelemento = document.createElement('li')
+            nuevoelemento.textContent= nombres[i] //i cada elemento del array
+
+            lista.appendChild(nuevoelemento)
+            
+        }
+
+
+    </script>
+
+</body>
+
+</html>

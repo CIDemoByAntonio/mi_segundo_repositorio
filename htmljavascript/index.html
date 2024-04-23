@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender javascript</title>
+</head>
+
+<body>
+    <h3>Aprender javascript con html</h3>
+    <div id="datos"></div>
+    <script>
+        document.getElementById('datos').innerHTML = 'Hola mundo'
+        const texto = document.getElementById('datos')//.append(' como estas')
+        texto.append(' como estas') //appen agregar
+
+        // datos = document.getElementById('datos')
+        datos.innerHTML = `
+        <h1>Estoy muy bien</h1>
+        <h3>Mi nombre es Michael</h3>  `
+        /*altura deber ser mas grande que 180 en html que eres una persona alta 
+        si es mas pequeña que 180 debeb de decir que eres una persona bajita*/
+        let altura = 180
+        if (altura > 180) {
+            console.log('Eres una persona alta')
+        } else {                           //aparece en la consola el resultado
+            console.log('eres una persona bajita')
+        }
+
+        const texto1 = document.createElement('h1')
+        document.body.appendChild(texto1)
+    //bajo rojo alto azul
+        if (altura >= 180) {
+            texto1.innerHTML = 'Eres una persona alta'
+            texto1.style.color ='blue'
+        } else {
+            texto1.innerHTML = 'Eres una persona bajita'
+            texto1.style.color ='red'
+        }
+        
+    
+
+
+    </script>
+</body>
+
+</html>

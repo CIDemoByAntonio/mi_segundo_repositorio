@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="encabezado"></h1>
+    <input type="text" id="texto" class="hola">  
+    <br> 
+    <br>
+    <img id="imagen">
+    <h1><footer id='pierna'></footer></h1>
+
+    <script>
+     //   var titulo = document.getElementById("encabezado")
+        var titulo= document.querySelector('#encabezado')
+        titulo.innerHTML = 'Hola mundo'
+        titulo.style.color='white' 
+        titulo.style.fontSize='40px'
+        titulo.style.backgroundColor='black'
+
+        //var texto =document.getElementById('texto')
+        var texto= document.querySelector('.hola') //class . id #
+        texto.value= 'Hola como estas'
+        texto.style.color='white'
+        texto.style.backgroundColor='blue'
+        texto.style.fontSize= '30px'
+
+        var imagen
+        imagen =document.getElementById('imagen')
+        imagen.src ='logo.png'
+       imagen.setAttribute('width', '250px');  //anchura
+       imagen.setAttribute('height', '200px') //altura
+       //se separa con . porque body es un hijo de document  
+       document.body.style.backgroundColor='gray'
+       document.title='Mi pagina web'
+       var pierna= document.querySelector('#pierna')
+       pierna.innerHTML='Esto es la pierna'
+       pierna.style.color='red'
+    </script>
+
+
+</body>
+</html>

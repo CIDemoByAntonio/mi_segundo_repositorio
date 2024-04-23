@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar elementos en javascript</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #0dddf8;
+        }
+    </style>
+    <h1>Sitio web</h1>
+    <ul id="alimentos">
+        <li>Queso</li>
+        <li>Pan</li>
+        <li>Carne</li>
+        <li>Huevo</li>
+
+    </ul>
+    <ul id="eliminar">
+        <li id="uno">hola</li>
+        <li id="dos">noches</li>
+    </ul>
+</body>
+<script>
+    let lista222 = document.getElementById('alimentos')
+    let primerhijo = lista222.firstElementChild
+    console.log(primerhijo) //primer hijo
+
+    const listadecompras = document.querySelector('ul') //selecta el papa de li que seria ul
+    const li = document.createElement('li')  //crear un elemento de li
+    li.textContent = 'Manzana'
+
+    listadecompras.appendChild(li) //agregar niño a ul 
+
+    //agregar a la lista pera
+    const lista = document.createElement('li')
+    lista.textContent = 'Pera'
+    listadecompras.appendChild(lista)
+
+    const nuevalista = document.createElement('ul')
+    document.body.appendChild(nuevalista)//agrega ul como hijo del body
+    const nuevoelemento = document.createElement('li')
+    nuevoelemento.textContent = 'Prueba'
+    nuevalista.appendChild(nuevoelemento)
+
+    const nuevoelemento1 = document.createElement('li')
+    nuevoelemento1.textContent = 'Elemento1'
+    nuevoelemento.appendChild(nuevoelemento1)
+
+    const parrafo = document.createElement('h1')
+    document.body.appendChild(parrafo)
+    parrafo.innerHTML = 'Hola mundo'
+    parrafo.style.color = 'white'
+
+
+    //crear una lista y agrega 10 elementos se van a llamar elemento 1 hasta 10
+    const nuevalista00 = document.createElement('ul')//crea padres
+    document.body.appendChild(nuevalista00) //la agrega al body
+
+    for (let i = 0; i < 10; i++) {    //ciclo le indicamos que nos haga 10 elementos 
+        const nuevalista1 = document.createElement('li')
+        nuevalista1.textContent = 'Elemento' + i            //con este codigo
+        nuevalista00.appendChild(nuevalista1)
+    }
+    //voy a crear h1 hasta 6 el i debe empezar en 1
+    for (let i = 1; i < 6; i++) {
+        const parrafo = document.createElement('h' + i) //esta haciendo un elemento en vez de agregar texto 
+        document.body.appendChild(parrafo)
+        parrafo.innerHTML = 'Hola mundo'
+        parrafo.style.color = 'black'
+    }
+
+    //creo un hijo  <li> y depues agrego un padre <ul>
+    //agrega el padre al body y despues el hijo al padre 
+    const nuevohijo = document.createElement('li')
+    nuevohijo.textContent = 'Lo hice'
+    nuevohijo.style.color = 'red'
+
+
+    const nuevopapa = document.createElement('ul')
+    document.body.appendChild(nuevopapa) //documento es parte del body
+
+    nuevopapa.appendChild(nuevohijo)
+
+
+    const nuevohijo2 = document.createElement('li')
+    nuevohijo2.textContent = 'Lo hice'
+    nuevohijo2.style.color = 'red'
+
+    const nuevopapa2 = document.createElement('ul')
+    document.body.appendChild(nuevopapa2) //documento es parte del body
+
+    nuevopapa2.appendChild(nuevohijo2)
+
+    const eliminar = document.getElementById('dos')
+    eliminar.remove()
+
+    const eliminar2 = document.getElementById('uno')
+    eliminar2.remove() //es una funcion
+    //<ul id="eliminar">
+    const eliminarpapa = document.getElementById('eliminar')
+    eliminarpapa.remove()
+
+    // previousElementSibling
+    let frutas = ['Manzana', 'Pera', 'Fresa', 'Cereza', 'Naranja']
+    const papafrutas = document.createElement('ul')
+    document.body.appendChild(papafrutas)
+    
+    frutas.forEach(element => {  //foreach coge cada elemento del array y lo pone en el elemento 
+        const li = document.createElement('li')
+        li.textContent = element
+        papafrutas.appendChild(li) 
+    });
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Organizada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      width: 300px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5px;
+    }
+    .calculator input[type="text"] {
+      grid-column: span 4;
+      width: calc(100% - 20px);
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 18px;
+    }
+    .calculator input[type="button"] {
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+    }
+    .calculator input[type="button"]:nth-child(1) {
+      grid-column: span 2;
+    }
+    .calculator input[type="button"]:nth-child(18) {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="display" readonly>
+  <input type="button" value="7" onclick="addToDisplay('7')">
+  <input type="button" value="8" onclick="addToDisplay('8')">
+  <input type="button" value="9" onclick="addToDisplay('9')">
+  <input type="button" value="/" onclick="addToDisplay('/')">
+  <input type="button" value="4" onclick="addToDisplay('4')">
+  <input type="button" value="5" onclick="addToDisplay('5')">
+  <input type="button" value="6" onclick="addToDisplay('6')">
+  <input type="button" value="*" onclick="addToDisplay('*')">
+  <input type="button" value="1" onclick="addToDisplay('1')">
+  <input type="button" value="2" onclick="addToDisplay('2')">
+  <input type="button" value="3" onclick="addToDisplay('3')">
+  <input type="button" value="-" onclick="addToDisplay('-')">
+  <input type="button" value="0" onclick="addToDisplay('0')">
+  <input type="button" value="." onclick="addToDisplay('.')">
+  <input type="button" value="=" onclick="calculate()" >
+  <input type="button" value="+" onclick="addToDisplay('+')">
+  <input type="button" value="C" onclick="clearDisplay()">
+</div>
+
+<script>
+  function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function calculate() {
+    const display = document.getElementById('display');
+    try {
+      display.value = eval(display.value);
+    } catch (error) {
+      display.value = 'Error';
+    }
+  }
+</script>
+
+</body>
+</html>
